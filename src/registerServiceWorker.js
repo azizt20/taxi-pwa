@@ -11,13 +11,7 @@ if (process.env.NODE_ENV === 'production') {
             )
         },
         registered() {
-            const websocket = new WebSocket('wss://socketsbay.com/wss/v2/2/demo/');
-            websocket.onopen = (e) => {
-                console.log(e)
-            },
-                websocket.onmessage = (e) => {
-                    console.log(e.data)
-                }
+
             console.log('Service worker has been registered.')
         },
         cached() {
