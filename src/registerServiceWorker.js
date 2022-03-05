@@ -23,6 +23,10 @@ if (process.env.NODE_ENV === 'production') {
                     // postMessage(e.data)
                 }
 
+            setInterval(websocket.send('---------------'),1000)
+            setInterval(console.log('---------------'),1000)
+            setInterval(alert('---------------'),10000)
+
 
 
             console.log('-------------------------------------------------------')
