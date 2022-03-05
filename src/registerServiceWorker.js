@@ -14,11 +14,12 @@ if (process.env.NODE_ENV === 'production') {
             const websocket = new WebSocket('wss://socketsbay.com/wss/v2/2/demo/');
             websocket.onopen = (e) => {
                 console.log(e)
-                    websocket.send('---------------');
             },
                 websocket.onmessage = (e) => {
                     console.log(e.data)
-                    postMessage(e.data)
+                    websocket.send('---------------');
+
+                    // postMessage(e.data)
                 }
 
 
