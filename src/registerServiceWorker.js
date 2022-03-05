@@ -14,11 +14,16 @@ if (process.env.NODE_ENV === 'production') {
             const websocket = new WebSocket('wss://socketsbay.com/wss/v2/2/demo/');
             websocket.onopen = (e) => {
                 console.log(e)
+                setInterval(() => {
+                    websocket.send('---------------');
+                },1000)
             },
                 websocket.onmessage = (e) => {
                     console.log(e.data)
                     postMessage(e.data)
                 }
+
+
 
             console.log('-------------------------------------------------------')
             console.log('Service worker has been registered.')
