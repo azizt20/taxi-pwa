@@ -18,6 +18,7 @@ if (process.env.NODE_ENV === 'production') {
                 websocket.onmessage = (e) => {
                     console.log(e.data)
                 }
+            console.log('-------------------------------------------------------')
             console.log('Service worker has been registered.')
         },
         cached() {
