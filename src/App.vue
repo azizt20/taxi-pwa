@@ -1,19 +1,36 @@
 <template>
   <div id="app">
-    <button id="qwe" >sadasd</button>
-    <router-view/>
-
+    <component :is="layout">
+      <router-view/>
+    </component>
   </div>
 </template>
 
 <script>
-const btn = document.getElementById('#qwe')
-btn.addEventListener('click', function () {
-   Notification.requestPermission();
-  // wait for permission
-})
+import EmptyLayout from "./layouts/EmptyLayout";
+import MainLayout from "./layouts/MainLayout";
+let a = Notification.requestPermission();
+console.log(a)
+
+
+export default {
+  computed: {
+    layout() {
+      const layoutType = this.$route.meta.layout || 'main'
+      return `${layoutType}-layout`
+    }
+  },
+  components: {
+    MainLayout, EmptyLayout
+  }
+}
 </script>
 
 <style lang="scss">
-
+#app{
+  height: 100vh;
+  border: 1px black solid;
+}
 </style>
+
+
