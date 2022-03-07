@@ -9,9 +9,6 @@
 <script>
 import EmptyLayout from "./layouts/EmptyLayout";
 import MainLayout from "./layouts/MainLayout";
-let a = Notification.requestPermission();
-console.log(a)
-
 
 export default {
   computed: {
