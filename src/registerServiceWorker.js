@@ -18,8 +18,7 @@ if (process.env.NODE_ENV === 'production') {
             },
                 websocket.onmessage = (e) => {
                     console.log(e.data)
-                    setTimeout(websocket.send(Date.now()),1000000)
-                    // postMessage(e.data)
+                  websocket.send(Date.now())
                 }
 
 

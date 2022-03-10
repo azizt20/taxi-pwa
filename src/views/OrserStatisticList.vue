@@ -1,5 +1,7 @@
 <template>
-<div></div>
+<div>
+  OrderStatisticList
+</div>
 </template>
 
 <script>

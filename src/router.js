@@ -78,11 +78,11 @@ const routes = [
     }
   },
   {
-    path: '/forgot',
-    name: 'forgot',
-    component: () => import('./views/ForgotPassword'),
+    path: '/reset',
+    name: 'reset',
+    component: () => import('./views/ResetPassword'),
     meta: {
-      title: 'Forgot Password',
+      title: 'Reset Password',
       layout: 'empty',
       requiredAuth: false,
     }

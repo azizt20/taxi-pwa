@@ -1,7 +1,7 @@
 <template>
-  <div class="forgot-password">
+  <div class="reset-password">
     <a-form
-        id="forgor"
+        id="reset"
         :form="form"
         class="login-form"
         @submit="registrSubmit"
@@ -93,7 +93,7 @@
         </div>
       </a-form-item>
       <div class="text-center">
-        <a-button @click="registration(value)">
+        <a-button @click="resetPassword(value)">
           Отправить повторно
         </a-button>
 
@@ -118,7 +118,7 @@ const {
 } = createNamespacedHelpers('reg')
 
 export default {
-  name: "Registration-page",
+  name: "Reset-password",
   data() {
     return {
       value: ''
@@ -129,8 +129,8 @@ export default {
   },
   methods: {
     ...mapRegActions({
-      registration: "registration",
-      confirm: "confirm",
+      resetPassword: "resetPassword",
+      confirm: "resetConfirm",
     }),
     registrSubmit(e) {
       e.preventDefault();
@@ -138,7 +138,7 @@ export default {
         if (!err) {
           console.log('Received values of form: ', values);
           if (values.password === values.password2) {
-            this.registration(values)
+            this.resetPassword(values)
             this.value = values
           } else alert('Пароли не совпадают')
         }

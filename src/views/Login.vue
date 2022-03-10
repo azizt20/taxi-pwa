@@ -84,7 +84,7 @@ export default {
           console.log('Received values of form: ', values);
           this.login(values)
               .then(() => {
-                this.$router.push({name: 'order'})
+                this.$router.push({name: 'orders'})
               })
         }
       });
