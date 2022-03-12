@@ -29,15 +29,18 @@ export default {
       getDriver: 'getDriver',
       getCars: 'getCars',
       getColors: 'getColors',
+      webSocket: 'webSocket',
     }),
     ...mapOrderActions({
-
+      getStatistic: 'getStatistic'
     })
   },
   mounted() {
     this.getDriver()
     this.getCars()
     this.getColors()
+    this.getStatistic()
+    this.webSocket()
   }
 
 }

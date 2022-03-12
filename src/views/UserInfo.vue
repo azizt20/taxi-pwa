@@ -18,7 +18,7 @@
         <a-input :disabled="!swich" size="large" v-model="number2"/>
       </div>
 
-      <div>Баланс
+      <div v-if="!swich">Баланс
         <a-input disabled size="large" v-model="balance"/>
       </div>
 
@@ -159,6 +159,9 @@ export default {
       this.carColor = this.driver.car_color.id
       this.carNumber = this.driver.car_number
       this.balance = this.driver.balance
+    },
+    carNumber: function (){
+      this.carNumber = this.carNumber.toUpperCase()
     }
   }
 }
@@ -169,6 +172,7 @@ export default {
   height: 100%;
   width: 100%;
   font-size: 20px;
+  color: #444444;
 
   input, .ant-select {
     color: black;

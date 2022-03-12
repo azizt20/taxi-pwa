@@ -19,7 +19,7 @@ export default {
         getOrdersHistory: state => {
             return state.ordersHistory;
         },
-        getStatistic: state => {
+        getOrdersStatistic: state => {
             return state.statistic;
         },
         getOrder: state => {
@@ -104,16 +104,7 @@ export default {
             })
         },
 
-        async getCars({commit}) {
-            await new Promise((resolve) => {
-                apiRequest
-                    .get('/admin/car/')
-                    .then(res => {
-                        commit('SET_ALL_CARS', res.data)
-                        resolve()
-                    })
-            })
-        },
+
     },
 
 };
